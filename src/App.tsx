@@ -33,7 +33,7 @@ const App = () => {
   );
   console.log(data);
 
-  const getTotalItems = () => null;
+  const getTotalItems = (items: CartItemType[]) => null;
 
   const handleAddToCart = (clickedItem: CartItemType) => null;
 
@@ -47,7 +47,11 @@ const App = () => {
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
         Cart goes here
       </Drawer>
-      <StyledButton onClick={() => setCartOpen(true)}></StyledButton>
+      <StyledButton onClick={() => setCartOpen(true)}>
+        <Badge badgeContent={getTotalItems(cartItems)} color='error'>
+          <AddShoppingCartIcon />
+        </Badge>
+      </StyledButton>
       <Grid container spacing={3}>
         {data?.map((item) => (
           <Grid item key={item.id} xs={12} sm={4}>
