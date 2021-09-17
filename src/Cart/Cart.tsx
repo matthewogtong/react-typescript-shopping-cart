@@ -10,7 +10,7 @@ type Props = {
     removeFromCart: (id: number) => void;
 };
 
-// Using React Functional Components with TypeScript
+// Implementing React Functional Components with TypeScript
 const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart}) => {
     const calculateTotal = (items: CartItemType[]) =>
         items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
