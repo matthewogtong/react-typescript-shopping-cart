@@ -48,7 +48,6 @@ const App = () => {
           ? { ...item, amount: item.amount + 1 } : item
         ))
       }
-      // First time the item is added
       return [...prev, { ...clickedItem, amount: 1 }]
     })
   };
